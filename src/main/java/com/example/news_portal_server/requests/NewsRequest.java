@@ -1,15 +1,19 @@
-package com.example.news_portal_server.models;
+package com.example.news_portal_server.requests;
 
-public class Newss {
+public class NewsRequest {
+
+    private String picture;
+
     private String title;
+
     private String details;
 
-    public Newss() {
+    public String getPicture() {
+        return picture;
     }
 
-    public Newss(String title, String details) {
-        this.title = title;
-        this.details = details;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     public String getTitle() {

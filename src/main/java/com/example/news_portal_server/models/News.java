@@ -1,5 +1,7 @@
 package com.example.news_portal_server.models;
 
+import com.example.news_portal_server.requests.NewsRequest;
+
 import javax.persistence.*;
 
 @Entity
@@ -45,5 +47,11 @@ public class News {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public void setConfig(NewsRequest newsRequest) {
+        this.picture = newsRequest.getPicture();
+        this.title = newsRequest.getTitle();
+        this.details = newsRequest.getDetails();
     }
 }
