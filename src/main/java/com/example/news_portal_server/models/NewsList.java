@@ -1,28 +1,33 @@
 package com.example.news_portal_server.models;
 
-import com.example.news_portal_server.requests.NewsRequest;
+public class NewsList {
 
-import javax.persistence.*;
-
-//for creating database... (CHANGED TO LIST)
-@Entity
-@Table(name = "news")
-public class News {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
     private String picture;
     private String title;
     private String details;
 
-    public News() {
+    public NewsList() {
     }
 
-    public Long getId() {
+    public NewsList(String picture, String title, String details) {
+        this.picture = picture;
+        this.title = title;
+        this.details = details;
+    }
+
+    public NewsList(int id, String picture, String title, String details) {
+        this.id = id;
+        this.picture = picture;
+        this.title = title;
+        this.details = details;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -48,11 +53,5 @@ public class News {
 
     public void setDetails(String details) {
         this.details = details;
-    }
-
-    public void setConfig(NewsRequest newsRequest) {
-        this.picture = newsRequest.getPicture();
-        this.title = newsRequest.getTitle();
-        this.details = newsRequest.getDetails();
     }
 }
