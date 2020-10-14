@@ -16,6 +16,14 @@ public class NewsService {
             new NewsList(3, "picture3", "U 77. godini preminula Berta iz humoristične serije \"Dva i po muškarca\"", "Conchata Ferrell, zvijezda serije \"Dva i po muškarca\", preminula je u 77. godini. Ovu tužnu vijest potvrdio je njen menadžer Dan Spilo.")
     ));
 
+    public List<NewsList> getNewsList() {
+        return newsList;
+    }
+
+    public void setNewsList(List<NewsList> newsList) {
+        this.newsList = newsList;
+    }
+
     /*private final NewsReporsitory newsReporsitory;
 
     public NewsService(NewsReporsitory newsReporsitory) {
@@ -37,7 +45,7 @@ public class NewsService {
         return newsReporsitory.findNewsById(id);
     }*/
 
-    public ApiResponse editNews(Long newsId, NewsList newslist){
+    public ApiResponse editNews(int newsId, NewsList newslist){
         /*News news = findBankAccountUserById(newsId);
         news.setConfig(newsRequest);
         save(news);*/

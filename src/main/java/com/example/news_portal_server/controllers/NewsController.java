@@ -29,7 +29,7 @@ public class NewsController {
 
     //for editing news with that id
     @PostMapping("/edit/{newsId}")
-    public ApiResponse editNews(@PathVariable Long newsId, @Valid @RequestBody NewsList newsList){
+    public ApiResponse editNews(@PathVariable int newsId, @Valid @RequestBody NewsList newsList){
         return newsService.editNews(newsId, newsList);
     }
 
