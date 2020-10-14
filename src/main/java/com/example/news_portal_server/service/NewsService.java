@@ -95,4 +95,15 @@ public class NewsService {
         }
         return pom;
     }
+
+    public List<NewsList> findAllNewsWithWord(String string) {
+
+        List<NewsList> pom = new ArrayList<>();
+        for(NewsList nl : newsList){
+            if(nl.getTitle().toLowerCase().contains(string.toLowerCase()) || nl.getDetails().toLowerCase().contains(string.toLowerCase())){
+                pom.add(nl);
+            }
+        }
+        return pom;
+    }
 }
